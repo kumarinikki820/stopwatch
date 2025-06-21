@@ -6,11 +6,11 @@ let interval;
 const display = document.getElementById('display');
 const startStopBtn = document.getElementById('startStop');
 const resetBtn = document.getElementById('reset');
-const clickSound = document.getElementById('clickSound');
+const clickSound = document.getElementById('clickSound'); // 🔊 Sound element
 
 function playClickSound() {
-    clickSound.currentTime = 0;
-    clickSound.play();
+    clickSound.currentTime = 0; // Always start from beginning
+    clickSound.play();          // Play sound
 }
 
 function updateDisplay(time) {
@@ -27,7 +27,7 @@ function pad(num) {
 }
 
 startStopBtn.addEventListener('click', () => {
-    playClickSound(); // Sound on every click
+    playClickSound(); // 🔊
 
     if (!running) {
         startTime = Date.now() - elapsed;
@@ -45,7 +45,7 @@ startStopBtn.addEventListener('click', () => {
 });
 
 resetBtn.addEventListener('click', () => {
-    playClickSound(); // Sound on reset
+    playClickSound(); // 🔊
     clearInterval(interval);
     elapsed = 0;
     updateDisplay(0);
